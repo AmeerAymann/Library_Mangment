@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author yahya
+ * @author Ameer ~
  */
 public  class LibraryApp extends Application {
      Map<String, Pane> mapPanes = new TreeMap<>();

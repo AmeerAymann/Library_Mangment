@@ -29,7 +29,7 @@ import librarymangment.exceptions.NonexistentEntityException;
 /**
  * FXML Controller class
  *
- * @author yahya
+ * @author Ameer ~
  */
 public class BoorrowersInterFaceController implements Initializable {
     ObservableList<String> genderStatus = FXCollections.observableArrayList("Male","Female");
@@ -127,9 +127,10 @@ public class BoorrowersInterFaceController implements Initializable {
             borrowers.setGender(1);}
         BorrowersJpaController bojpcon = new BorrowersJpaController(this.emf);
         bojpcon.create(borrowers);
+        RefreshTextFields();
         User_Ulog.myAlert("Operation Complete", "The Item was Added",1);
         RefreshTable();
-        User_Ulog.addToLog(" Added Book name { "+borrowers.getFirst_name()+" } in"+ " borrowers " +"On ");
+        User_Ulog.addToLog(" Added Borrower name { "+borrowers.getFirst_name()+" } in"+ " borrowers " +"On ");
 
         
     }
@@ -167,7 +168,7 @@ public class BoorrowersInterFaceController implements Initializable {
         User_Ulog.addToLog(" Deleted  borrower with ID { "+ this.id+" } From"+ " borrowers " +"On ");
     }
     
-    
+    /////////////////////////////////////////////////
     
      private void showSelectedBorrower(){
         Borrowers borrowers = tvBorrower.getSelectionModel().getSelectedItem();

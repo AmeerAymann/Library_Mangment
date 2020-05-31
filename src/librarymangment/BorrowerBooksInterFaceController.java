@@ -28,7 +28,7 @@ import librarymangment.exceptions.NonexistentEntityException;
 /**
  * FXML Controller class
  *
- * @author yahya
+ * @author Ameer ~
  */
 public class BorrowerBooksInterFaceController implements Initializable {
 
@@ -63,7 +63,6 @@ public class BorrowerBooksInterFaceController implements Initializable {
     private Timestamp ti;
     private int bookId;
     private int BorrowerId;
-    
     Date date = new Date();
     
 
@@ -78,7 +77,7 @@ public class BorrowerBooksInterFaceController implements Initializable {
         tcBorrowingDate.setCellValueFactory(new PropertyValueFactory("borrowers_date"));
         tcBookReturndeDate.setCellValueFactory(new PropertyValueFactory("return_date"));
         tvBorrowerBook.getSelectionModel().selectedItemProperty().addListener(
-                event-> showSelectedBook() );
+                event-> showSelected() );
         this.emf = Persistence.createEntityManagerFactory("LibraryMangmentPU");
     }    
 
@@ -156,12 +155,12 @@ public class BorrowerBooksInterFaceController implements Initializable {
         RefreshTextFields();
         User_Ulog.myAlert("Operation Complete", "The Book was Returned to the liprary",1);
         RefreshTable();
-        User_Ulog.addToLog(" Deleted book with ID { "+ this.id+" } has Returned in"+ " borrower_books " +"On ");
+        User_Ulog.addToLog(" Has Returned book with ID { "+ this.id+" }  in"+ " borrower_books " +"On ");
         
               
     }
-    
-     private void showSelectedBook(){
+    /////////////////////////////////////////////////////
+     private void showSelected(){
         borrower_books borrowerbooks = tvBorrowerBook.getSelectionModel().getSelectedItem();
         if(borrowerbooks != null){
         this.id = borrowerbooks.getId();

@@ -19,16 +19,16 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author yahya
+ * @author Ameer ~
  */
 public class MangmentsController implements Initializable {
 
     @FXML
-    private Button buttonBooksMan;
+    private Button BooksMangment;
     @FXML
-    private Button buttonBorrowersMan;
+    private Button BorrowerMangment;
     @FXML
-    private Button buttonBorrBookMan;
+    private Button BorroweBookMang;
 
     /**
      * Initializes the controller class.
@@ -37,45 +37,46 @@ public class MangmentsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
     @FXML
-    private void buttonBooksManHandle(ActionEvent event) throws Exception {
-    Stage stage = new Stage(); 
-    BOOKSMANGMENT_STAGE(stage);    
+    private void BooksMangmentHandle(ActionEvent event) throws Exception {
+            Stage stage = new Stage(); 
+            BooksStage(stage);
     }
 
     @FXML
-    private void buttonBorrowersManHandle(ActionEvent event) throws Exception {
-        Stage stage = new Stage();
-        BORROWERSMANGMENT_STAGE(stage);
+    private void BorrowerMangmentHandle(ActionEvent event) throws Exception {
+        
+         Stage stage = new Stage();
+        BorrowerStage(stage);
     }
 
     @FXML
-    private void buttonBorrBookManHandle(ActionEvent event) throws Exception {
+    private void BorroweBookMangHandle(ActionEvent event) throws Exception {
         Stage stage = new Stage();
-        BorrowerBooks_STAGE(stage);
+        BorrowerBooksStage(stage);
     }
     
-    public void BOOKSMANGMENT_STAGE(Stage stage) throws Exception {
+    
+    public void BooksStage(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("BooksInterFace.fxml"));
         
         stage.setTitle("Books Mangment");
         stage.setScene(new Scene(root));
         stage.show();
     }
-    public void BORROWERSMANGMENT_STAGE(Stage stage) throws Exception {
+    public void BorrowerStage(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("BorrowersInterFace.fxml"));
-        
         stage.setTitle("Borrowers Mangment");
         stage.setScene(new Scene(root));
         stage.show();
     }
-     public void BorrowerBooks_STAGE(Stage stage) throws Exception {
+     public void BorrowerBooksStage(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("BorrowerBooksInterFace.fxml"));
-        
         stage.setTitle("Borrowers Mangment");
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+   
     
 }

@@ -20,7 +20,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 /**
  *
- * @author yahya
+ * @author Ameer ~
  */
 @Entity
 @NamedQueries({

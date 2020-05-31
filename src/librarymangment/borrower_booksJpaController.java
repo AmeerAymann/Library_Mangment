@@ -17,7 +17,7 @@ import librarymangment.exceptions.NonexistentEntityException;
 
 /**
  *
- * @author yahya
+ * @author Ameer ~
  */
 public class borrower_booksJpaController implements Serializable {
 

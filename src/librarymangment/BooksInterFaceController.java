@@ -139,7 +139,6 @@ public class BooksInterFaceController implements Initializable {
     }
     
     private void resetControls(){
-        tfID.setText("");
         tfName.setText("");
         tfDescription.setText("");
         tvBooks.getItems().clear();

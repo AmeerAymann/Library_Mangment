@@ -34,7 +34,7 @@ import javax.swing.JOptionPane;
 /**
  * FXML Controller class
  *
- * @author yahya
+ * @author Ameer ~
  */
 public class LoginInterFaceController implements Initializable {
 
@@ -42,12 +42,12 @@ public class LoginInterFaceController implements Initializable {
     private TextField tfUserName;
     private LibraryApp controller;
 
-    @FXML
-    private Button buttonLogin;
     private EntityManagerFactory emf;
     private Users users;
     @FXML
     private PasswordField tffPassword;
+    @FXML
+    private Button Login;
     
     /**
      * Initializes the controller class.
@@ -60,8 +60,9 @@ public class LoginInterFaceController implements Initializable {
 public void init (LibraryApp control){ 
     this.controller = control;
 }
+
     @FXML
-    private void buttonLoginHandle(ActionEvent event) throws IOException, Exception {
+    private void LoginHandle(ActionEvent event) throws IOException {
         EntityManager em = this.emf.createEntityManager();
         try{
         users = (Users) em.createNamedQuery("Users.findId")
@@ -86,6 +87,7 @@ public void init (LibraryApp control){
         }
         
         em.close();
+        
     }
     
      
